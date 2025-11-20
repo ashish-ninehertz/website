@@ -3,14 +3,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#4A90E2',
-        secondary: '#50E3C2',
-        accent: '#F5A623',
-        background: '#FFFFFF',
-        surface: '#262626',
-        text: '#333333',
-        'text-secondary': '#A3A3A3',
-        border: '#2F2F2F',
+        primary: '#39FF14',
+        secondary: '#00FF41',
+        accent: '#CCFF00',
+        background: '#0A0E0A',
+        surface: '#1A1F1A',
+        text: '#FFFFFF',
+        'text-secondary': '#B8FFB8',
+        border: '#2F4F2F',
         success: '#10b981',
         warning: '#f59e0b',
         error: '#ef4444',
