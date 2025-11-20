@@ -30,7 +30,7 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-background flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -39,22 +39,22 @@ export default function SignupPage() {
       >
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <div className="p-3 bg-primary rounded-xl">
-              <GraduationCap className="w-12 h-12 text-white" />
+            <div className="p-3 bg-primary rounded-xl shadow-lg shadow-primary/50">
+              <GraduationCap className="w-12 h-12 text-background" />
             </div>
           </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">Create Account</h2>
-          <p className="text-gray-600">Join our learning community today</p>
+          <h2 className="text-3xl font-bold text-text mb-2 glow-text">Create Account</h2>
+          <p className="text-text-secondary">Join our learning community today</p>
         </div>
 
         <div className="card">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="name" className="block text-sm font-medium text-text mb-2">
                 Full Name
               </label>
               <div className="relative">
-                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-secondary w-5 h-5" />
                 <input
                   type="text"
                   id="name"
@@ -69,11 +69,11 @@ export default function SignupPage() {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-text mb-2">
                 Email Address
               </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-secondary w-5 h-5" />
                 <input
                   type="email"
                   id="email"
@@ -88,7 +88,7 @@ export default function SignupPage() {
             </div>
 
             <div>
-              <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="role" className="block text-sm font-medium text-text mb-2">
                 I am a
               </label>
               <select
@@ -104,11 +104,11 @@ export default function SignupPage() {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="password" className="block text-sm font-medium text-text mb-2">
                 Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-secondary w-5 h-5" />
                 <input
                   type="password"
                   id="password"
@@ -123,11 +123,11 @@ export default function SignupPage() {
             </div>
 
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="confirmPassword" className="block text-sm font-medium text-text mb-2">
                 Confirm Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-secondary w-5 h-5" />
                 <input
                   type="password"
                   id="confirmPassword"
@@ -147,15 +147,15 @@ export default function SignupPage() {
                 name="terms"
                 type="checkbox"
                 required
-                className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded mt-1"
+                className="h-4 w-4 text-primary focus:ring-primary border-border rounded mt-1 bg-surface"
               />
-              <label htmlFor="terms" className="ml-2 block text-sm text-gray-700">
+              <label htmlFor="terms" className="ml-2 block text-sm text-text-secondary">
                 I agree to the{' '}
-                <Link to="/terms" className="text-primary hover:text-primary/80">
+                <Link to="/terms" className="text-primary hover:text-secondary transition-colors">
                   Terms & Conditions
                 </Link>{' '}
                 and{' '}
-                <Link to="/privacy" className="text-primary hover:text-primary/80">
+                <Link to="/privacy" className="text-primary hover:text-secondary transition-colors">
                   Privacy Policy
                 </Link>
               </label>
@@ -168,10 +168,10 @@ export default function SignupPage() {
           </form>
 
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-text-secondary">
               Already have an account?{' '}
-              <Link to="/login" className="text-primary hover:text-primary/80 font-medium">
-                Sign in
+              <Link to="/login" className="text-primary hover:text-secondary font-medium transition-colors">
+                Login
               </Link>
             </p>
           </div>

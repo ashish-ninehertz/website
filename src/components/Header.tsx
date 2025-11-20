@@ -32,7 +32,7 @@ export default function Header() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'backdrop-blur-lg bg-white/80 border-b border-gray-200/50 shadow-sm'
+          ? 'backdrop-blur-lg bg-surface/80 border-b border-primary/20 shadow-sm glow-border'
           : 'bg-transparent'
       }`}
     >
@@ -40,10 +40,10 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="p-2 bg-primary rounded-lg transition-transform duration-300 group-hover:scale-110">
-              <GraduationCap className="w-6 h-6 text-white" />
+            <div className="p-2 bg-primary rounded-lg transition-transform duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-primary/50">
+              <GraduationCap className="w-6 h-6 text-background" />
             </div>
-            <span className="text-xl md:text-2xl font-bold text-primary">
+            <span className="text-xl md:text-2xl font-bold text-primary glow-text">
               website
             </span>
           </Link>
@@ -56,15 +56,15 @@ export default function Header() {
                 to={link.path}
                 className={`relative font-medium transition-colors duration-300 ${
                   isActive(link.path)
-                    ? 'text-primary'
-                    : 'text-gray-600 hover:text-primary'
+                    ? 'text-primary glow-text'
+                    : 'text-text-secondary hover:text-primary'
                 }`}
               >
                 {link.name}
                 {isActive(link.path) && (
                   <motion.div
                     layoutId="activeLink"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary shadow-lg shadow-primary/50"
                     initial={false}
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
@@ -77,7 +77,7 @@ export default function Header() {
           <div className="hidden md:flex items-center space-x-4">
             <Link to="/login" className="btn-secondary flex items-center space-x-2">
               <LogIn className="w-4 h-4" />
-              <span>Sign In</span>
+              <span>Login</span>
             </Link>
             <Link to="/signup" className="btn-primary flex items-center space-x-2">
               <UserPlus className="w-4 h-4" />
@@ -88,7 +88,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-gray-600 hover:text-primary transition-colors"
+            className="md:hidden p-2 text-text-secondary hover:text-primary transition-colors"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
@@ -108,7 +108,7 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden backdrop-blur-lg bg-white/95 border-t border-gray-200/50"
+            className="md:hidden backdrop-blur-lg bg-surface/95 border-t border-primary/20"
           >
             <div className="container-custom py-4 space-y-4">
               {navLinks.map((link) => (
@@ -118,21 +118,21 @@ export default function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`block py-2 font-medium transition-colors ${
                     isActive(link.path)
-                      ? 'text-primary'
-                      : 'text-gray-600 hover:text-primary'
+                      ? 'text-primary glow-text'
+                      : 'text-text-secondary hover:text-primary'
                   }`}
                 >
                   {link.name}
                 </Link>
               ))}
-              <div className="pt-4 space-y-3 border-t border-gray-200">
+              <div className="pt-4 space-y-3 border-t border-primary/20">
                 <Link
                   to="/login"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="btn-secondary w-full flex items-center justify-center space-x-2"
                 >
                   <LogIn className="w-4 h-4" />
-                  <span>Sign In</span>
+                  <span>Login</span>
                 </Link>
                 <Link
                   to="/signup"
